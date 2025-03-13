@@ -20,7 +20,7 @@ def snowman(snowman_word):
     If the player wins and, 
     'Sorry, you lose! The word was {snowman_word}' if the player loses
     """
-    pass
+    wrong_
 
 
 def print_snowman_graphic(wrong_guesses_count):
