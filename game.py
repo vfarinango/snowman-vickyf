@@ -24,7 +24,7 @@ def snowman(snowman_word):
     wrong_guesses_list = []
     correct_letter_guess_statuses = build_letter_status_dict(snowman_word)
 
-    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES and correct_guesses < len(snowman_word):
+    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES:
         #Print the snowman graphic by calling the print_snowman_graphic function 
         print_snowman_graphic(wrong_guesses_count)
         #Print user's guess progress
