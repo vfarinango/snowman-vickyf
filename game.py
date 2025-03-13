@@ -32,20 +32,20 @@ def snowman(snowman_word):
         #Using the get_letter_from_user function, store user's input in a 'guess' variable
         guess = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
 
-        #Iterate through 
-
-        
-
-    user_input = get_letter_from_user()
-    # Use the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
-    if user_input in snowman_word:
-        print("You guessed a letter that's in the word!")
-        correct_guesses += 1
-    else:
-        print(f"The letter {user_input} is not in the word")
-        wrong_guesses += 1
-
-    print_snowman(wrong_guesses)
+        #Check that the user's guess is in the snowman word
+        if guess in snowman_word:
+            correct_letter_guess_statuses[guess] = True
+            #Check if user made all correct guesses in order to print win statement
+            if is_word_guessed(snowman_word, correct_letter_guess_statuses):
+                print("Congratulations, you win!")
+                return
+            #If user's guess is wrong, add it to the wrong guesses list 
+            else:
+                wrong_guesses_list.append(guess)
+                wrong_guesses_count += 1
+        print_snowman_graphic(wrong_guesses_count)
+        print_word_progress_string(snowman_word, correct_letter_guess_statuses)
+        print(f"Sorry, you lose! The word was {snowman_word}")
 
 
 def print_snowman_graphic(wrong_guesses_count):
