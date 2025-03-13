@@ -24,6 +24,29 @@ def snowman(snowman_word):
     wrong_guesses_list = []
     correct_letter_guess_statuses = build_letter_status_dict(snowman_word)
 
+    while wrong_guesses < SNOWMAN_MAX_WRONG_GUESSES and correct_guesses < len(snowman_word):
+        #Print the snowman graphic by calling the print_snowman_graphic function 
+        print_snowman_graphic(wrong_guesses_count)
+        #Print user's guess progress
+        print_word_progress_string(snowman_word, correct_letter_guess_statuses)
+        #Using the get_letter_from_user function, store user's input in a 'guess' variable
+        guess = get_letter_from_user(correct_letter_guess_statuses, wrong_guesses_list)
+
+        #Iterate through 
+
+        
+
+    user_input = get_letter_from_user()
+    # Use the new variable snowman_word instead of the constant variable SNOWMAN_WORD here:
+    if user_input in snowman_word:
+        print("You guessed a letter that's in the word!")
+        correct_guesses += 1
+    else:
+        print(f"The letter {user_input} is not in the word")
+        wrong_guesses += 1
+
+    print_snowman(wrong_guesses)
+
 
 def print_snowman_graphic(wrong_guesses_count):
     """This function prints out the appropriate snowman image 
