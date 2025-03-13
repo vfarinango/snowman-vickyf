@@ -37,7 +37,7 @@ def snowman(snowman_word):
             correct_letter_guess_statuses[guess] = True
             #Check if user made all correct guesses in order to print win statement
             if is_word_guessed(snowman_word, correct_letter_guess_statuses):
-                print("Congratulations, you win!")
+                print("you win")
                 return
             #If user's guess is wrong, add it to the wrong guesses list 
             else:
@@ -45,7 +45,7 @@ def snowman(snowman_word):
                 wrong_guesses_count += 1
         print_snowman_graphic(wrong_guesses_count)
         print_word_progress_string(snowman_word, correct_letter_guess_statuses)
-        print(f"Sorry, you lose! The word was {snowman_word}")
+        print(f"sorry, you lose! The word was {snowman_word}")
 
 
 def print_snowman_graphic(wrong_guesses_count):
